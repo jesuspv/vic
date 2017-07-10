@@ -31,10 +31,10 @@ install-libs() {
 }
 
 install-plugins() {
-   local -r MNGR=~/.vims/$CFG_ENV/vim/autoload/plug.vim
+   local -r mngr=~/.vims/$CFG_ENV/vim/autoload/plug.vim
 
-   rm -f "$MNGR"
-   curl -fLo "$MNGR" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   rm -f "$mngr"
+   curl -fLo "$mngr" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
    ~/.vims/vi"$CFG_ENV" \
       +PlugUpgrade `# upgrade vim-plug` \
@@ -45,12 +45,13 @@ install-plugins() {
 install-repo() {
    mkdir -p ~/.vims
 
+   local -r repo=~/.vims/$CFG_ENV
    if [[ -d ~/.vims/$CFG_ENV ]]; then
       echo "Pulling repository changes..."
-      git pull --rebase ~/.vims/"$CFG_ENV"
+      cd "$repo"; git pull --rebase "$repo"; cd -
    else
       echo "Installing repository..."
-      git clone "https://github.com/jesuspv/vi$CFG_ENV.git" ~/.vims/"$CFG_ENV"
+      git clone "https://github.com/jesuspv/vi$CFG_ENV.git" "$repo"
    fi
 
    if [[ ! -x ~/.vims/vi$CFG_ENV ]]; then
