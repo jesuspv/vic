@@ -2,11 +2,12 @@
 
 Vim configuration for C/C++ development projects.
 
-All the configuration files (including plugins) are installed under `~/.vims/c`,
-thus **not** changing any previous user configuration (under `~/.vim`).  In
-order to run `vim` with such configuration, `~/.vims/vic` executable vim wrapper
-is provided.  Please, add it to your `PATH` (or any other mechanism such as
-aliases) to make it generally available in your environment.
+All the configuration files (including plugins) are installed under
+`~/.vims/c`, thus **not** changing any previous user configuration (either
+`~/.vimrc` or `~/.vim`).  In order to run `vim` with such configuration,
+`~/.vims/vic` executable vim wrapper is provided.  Please, add it to your
+`PATH` (or any other mechanism such as aliases) to make it generally available
+in your environment.
 
 ## Installation
 
