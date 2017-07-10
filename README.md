@@ -21,9 +21,8 @@ bash <(wget --output-document=- https://raw.githubusercontent.com/jesuspv/vic/ma
 ```
 
 Please, do not forget the ending argument `c`. It is the *configuration
-environment*, that is, the multiple vim configurations coexisting under
-`~/.vims/`). In particular, the `c` in `~/.vims/c/` and `~/.vims/vic` in this
-case.
+environment*, that is, the `c` in `~/.vims/c/` and `~/.vims/vic`. It allows to
+handle multiple vim configurations separately following the same pattern.
 
 ## Upgrade
 
