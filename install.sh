@@ -50,7 +50,7 @@ install-repo() {
       git pull --rebase ~/.vims/"$CFG_ENV"
    else
       echo "Installing repository..."
-      git clone "https://github.com/jesuspv/vi$CFG_ENV.git" "~/.vims/$CFG_ENV"
+      git clone "https://github.com/jesuspv/vi$CFG_ENV.git" ~/.vims/"$CFG_ENV"
    fi
 
    if [[ ! -x ~/.vims/vi$CFG_ENV ]]; then
