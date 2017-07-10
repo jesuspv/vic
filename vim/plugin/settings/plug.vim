@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'Townk/vim-autoclose'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'francoiscabrol/ranger.vim'
@@ -13,6 +14,7 @@ Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
