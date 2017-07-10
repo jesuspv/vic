@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# specific configuration
+
+[[ $# -gt 0 ]] || { echo "error: missing configuration environment" >&2; exit 1; }
+readonly CFG_ENV=$1
+shift
+
+# general configuration
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+readonly VIMDIR=$HOME/.vims/$CFG_ENV/vim
+readonly VIMINFO=$HOME/.vims/$CFG_ENV/.viminfo
+readonly VIMRC=$HOME/.vims/$CFG_ENV/vimrc
+
+# main
+
+vim -p -N -n \
+   -i "$VIMINFO" \
+   -u "$VIMRC" \
+   --cmd 'let &rtp = substitute(&rtp, $HOME."/\.vim", "'$VIMDIR'", "g")' \
+   "$@"
