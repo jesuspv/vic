@@ -6,8 +6,8 @@ All the configuration files (including plugins) are installed under
 `~/.vims/c`, thus **not** changing any previous user configuration (either
 `~/.vimrc` or `~/.vim`).  In order to run `vim` with such configuration,
 executable vim wrapper `~/.vims/vic` is provided.  Please, add it to your
-`PATH` (or any other mechanism such as aliases) to make it generally available
-in your environment.
+`PATH` (or by any other mechanism such as aliases) to make it generally
+available in your environment.
 
 ## Installation
 
