@@ -22,10 +22,12 @@ let mapleader = ","
 nore . :
 
 set background=dark
+set colorcolumn=+1 " textwidth+1
 set hlsearch
 set number
 set foldmethod=syntax
 set foldlevel=20 " large enough
+set textwidth=80
 
 " }}}
 
