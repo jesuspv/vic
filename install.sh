@@ -12,29 +12,22 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+source "$(cd "${BASH_SOURCE[0]%/*}" && pwd)/packages.sh"
+
 # logic
 
-install-libs() {
-   echo "Installing system libraries..."
+install-packages() {
+   echo "Installing system packages..."
 
-   sudo apt-get install -y \
-      ack-grep \
-      curl \
-      exuberant-ctags `# required?` \
-      fonts-fantasque-sans \
-      git \
-      ranger \
-      sshfs \
-      tree \
-      vim \
-      && :
+   sudo apt-get install --yes "${!PACKAGES[@]}"
 }
 
 install-plugins() {
    local -r mngr=~/.vims/$CFG_ENV/vim/autoload/plug.vim
 
-   rm -f "$mngr"
-   curl -fLo "$mngr" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   rm --force "$mngr"
+   curl --create-dirs --fail --location --output "$mngr" \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
    ~/.vims/vi"$CFG_ENV" \
       +PlugUpgrade `# upgrade vim-plug` \
@@ -43,7 +36,7 @@ install-plugins() {
 }
 
 install-repo() {
-   mkdir -p ~/.vims
+   mkdir --parents ~/.vims
 
    local -r repo=~/.vims/$CFG_ENV
    if [[ -d ~/.vims/$CFG_ENV ]]; then
@@ -60,6 +53,18 @@ install-repo() {
    fi
 }
 
+list-packages() {
+   for pkg in "${!PACKAGES[@]}"; do
+      echo "* [$pkg](${PACKAGES[$pkg]})"
+   done
+}
+
+list-plugins() {
+   local -r project=$(cd "${BASH_SOURCE[0]%/*}" && pwd)
+
+   grep '^Plug' "$project/vim/plugin/settings/plug.vim" | sed "s|^Plug '\(.*\)'$|* [\1](https://github.com/\1)|"
+}
+
 show-tips() {
    printf '\n%s\n%s\n' \
       'To conclude installation, please consider to:' \
@@ -68,11 +73,39 @@ show-tips() {
       || echo " * Make directory '~/.vims' available in your PATH to run command 'vi$CFG_ENV' for usability."
 }
 
+update-readme() {
+   local -r project=$(cd "${BASH_SOURCE[0]%/*}" && pwd)
+
+   local -r tmp=$(mktemp)
+   trap "rm --force '$tmp'" EXIT
+
+   (
+      sed \
+         --quiet \
+         --expression='1,/__PACKAGE_LIST_BEGIN__/{p;}' \
+         "$project/README.md";
+      list-packages;
+      sed \
+         --quiet \
+         --expression='/__PACKAGE_LIST_END__/,/__PLUGIN_LIST_BEGIN__/{p;}' \
+         "$project/README.md";
+      list-plugins;
+      sed \
+         --quiet \
+         --expression='/PLUGIN_LIST_END/,$p' \
+         "$project/README.md";
+   ) > "$tmp"
+
+   mv --force "$tmp" "$project/README.md"
+}
+
 main() {
-   install-libs
+   install-packages
    install-repo
    install-plugins
+   update-readme # for development
    show-tips
 }
 
-main
+# main
+update-readme
