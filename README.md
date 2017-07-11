@@ -32,7 +32,8 @@ merge`.
 
 ## List of System Packages
 
-Please, notice that this step requires `sudo` rights (password will be requested).
+Please, notice that their installation requires `sudo` rights (password will be
+requested).
 
 [](__PACKAGE_LIST_BEGIN__)
 * [ack-grep](https://beyondgrep.com/)
@@ -45,6 +46,9 @@ Please, notice that this step requires `sudo` rights (password will be requested
 * [tree](https://linux.die.net/man/1/tree)
 * [vim](http://www.vim.org/)
 [](__PACKAGE_LIST_END__)
+
+This list is defined in `packages.sh`. Packages are handled by
+[`apt-get`](https://linux.die.net/man/8/apt-get).
 
 ## List of Plugins
 
@@ -72,3 +76,6 @@ Please, notice that this step requires `sudo` rights (password will be requested
 * [tpope/vim-vinegar](https://github.com/tpope/vim-vinegar)
 * [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
 [](__PLUGIN_LIST_END__)
+
+This list is defined in `vim/plugin/settings/plug.vim`. Plugins are handled by
+[vim-plug](https://github.com/junegunn/vim-plug).

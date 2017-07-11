@@ -20,6 +20,7 @@ install-packages() {
    echo "Installing system packages..."
 
    sudo apt-get install --yes "${!PACKAGES[@]}"
+   sudo apt-get autoremove
 }
 
 install-plugins() {
@@ -32,6 +33,7 @@ install-plugins() {
    ~/.vims/vi"$CFG_ENV" \
       +PlugUpgrade `# upgrade vim-plug` \
       +PlugUpdate `# install or update plugins` \
+      +PlugClean! `# remove unused directories` \
       +qall
 }
 
