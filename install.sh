@@ -84,12 +84,12 @@ update-readme() {
          --quiet \
          --expression='1,/__PACKAGE_LIST_BEGIN__/{p;}' \
          "$project/README.md";
-      list-packages | sort;
+      list-packages | sort --ignore-case;
       sed \
          --quiet \
          --expression='/__PACKAGE_LIST_END__/,/__PLUGIN_LIST_BEGIN__/{p;}' \
          "$project/README.md";
-      list-plugins | sort;
+      list-plugins | sort --ignore-case;
       sed \
          --quiet \
          --expression='/PLUGIN_LIST_END/,$p' \
