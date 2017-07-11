@@ -36,20 +36,19 @@ Please, notice that this step requires `sudo` rights (password will be requested
 
 [](__PACKAGE_LIST_BEGIN__)
 * [ack-grep](https://beyondgrep.com/)
-* [git](https://git-scm.com/)
-* [vim](http://www.vim.org/)
-* [ranger](http://ranger.nongnu.org/)
-* [exuberant-ctags](http://ctags.sourceforge.net/)
 * [curl](https://curl.haxx.se/)
-* [sshfs](https://github.com/libfuse/sshfs)
+* [exuberant-ctags](http://ctags.sourceforge.net/)
 * [fonts-fantasque-sans](https://github.com/belluzj/fantasque-sans)
+* [git](https://git-scm.com/)
+* [ranger](http://ranger.nongnu.org/)
+* [sshfs](https://github.com/libfuse/sshfs)
 * [tree](https://linux.die.net/man/1/tree)
+* [vim](http://www.vim.org/)
 [](__PACKAGE_LIST_END__)
 
 ## List of Plugins
 
 [](__PLUGIN_LIST_BEGIN__)
-* [Townk/vim-autoclose](https://github.com/Townk/vim-autoclose)
 * [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 * [easymotion/vim-easymotion](https://github.com/easymotion/vim-easymotion)
 * [francoiscabrol/ranger.vim](https://github.com/francoiscabrol/ranger.vim)
@@ -65,6 +64,7 @@ Please, notice that this step requires `sudo` rights (password will be requested
 * [nathanaelkane/vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides)
 * [octol/vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
 * [terryma/vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
+* [Townk/vim-autoclose](https://github.com/Townk/vim-autoclose)
 * [tpope/vim-dispatch](https://github.com/tpope/vim-dispatch)
 * [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 * [tpope/vim-projectionist](https://github.com/tpope/vim-projectionist)
