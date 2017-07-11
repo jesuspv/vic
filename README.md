@@ -32,7 +32,7 @@ merge`.
 
 ## List of System Packages
 
-This is the list of packages installed:
+Please, notice that this step requires `sudo` rights (password will be requested).
 
 [](__PACKAGE_LIST_BEGIN__)
 * [ack-grep](https://beyondgrep.com/)
@@ -45,8 +45,6 @@ This is the list of packages installed:
 * [fonts-fantasque-sans](https://github.com/belluzj/fantasque-sans)
 * [tree](https://linux.die.net/man/1/tree)
 [](__PACKAGE_LIST_END__)
-
-Please, notice that this step requires sudo rights (password will be requested).
 
 ## List of Plugins
 
