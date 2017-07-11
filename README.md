@@ -47,8 +47,8 @@ requested).
 * [vim](http://www.vim.org/)
 [](__PACKAGE_LIST_END__)
 
-This list is defined in `packages.sh`. Packages are handled by
-[`apt-get`](https://linux.die.net/man/8/apt-get).
+This list is defined in `install.sh` (variable `PACKAGES`). Packages are
+handled by [`apt-get`](https://linux.die.net/man/8/apt-get).
 
 ## List of Plugins
 
