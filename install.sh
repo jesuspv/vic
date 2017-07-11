@@ -1,16 +1,20 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # specific configuration
 
-[[ $# -eq 1 ]] || { echo "error: missing configuration environment (X in ~/.vims/X)" >&2; exit 1; }
-readonly CFG_ENV=$1
-shift
+if [[ $0 = $BASH_SOURCE ]]; then # not sourced
+   [[ $# -eq 1 ]] || { echo "error: missing configuration environment (X in ~/.vims/X)" >&2; exit 1; }
+   readonly CFG_ENV=$1
+   shift
+fi
 
 # generic configuration
 
-set -o errexit
-set -o nounset
-set -o pipefail
+if [[ $0 = $BASH_SOURCE ]]; then # not sourced
+   set -o errexit
+   set -o nounset
+   set -o pipefail
+fi
 
 # TODO(jesuspv) exuberant-ctags could be not required
 declare -A PACKAGES=(\
@@ -66,18 +70,6 @@ install-repo() {
    fi
 }
 
-list-packages() {
-   for pkg in "${!PACKAGES[@]}"; do
-      echo "* [$pkg](${PACKAGES[$pkg]})"
-   done
-}
-
-list-plugins() {
-   local -r project=$(cd "${BASH_SOURCE[0]%/*}" && pwd)
-
-   grep '^Plug' "$project/vim/plugin/settings/plug.vim" | sed "s|^Plug '\(.*\)'$|* [\1](https://github.com/\1)|"
-}
-
 show-tips() {
    printf '\n%s\n%s\n' \
       'To conclude installation, please consider to:' \
@@ -86,38 +78,11 @@ show-tips() {
       || echo " * Make directory '~/.vims' available in your PATH to run command 'vi$CFG_ENV' for usability."
 }
 
-update-readme() {
-   local -r project=$(cd "${BASH_SOURCE[0]%/*}" && pwd)
-
-   local -r tmp=$(mktemp)
-   trap "rm --force '$tmp'" EXIT
-
-   (
-      sed \
-         --quiet \
-         --expression='1,/__PACKAGE_LIST_BEGIN__/{p;}' \
-         "$project/README.md";
-      list-packages | sort --ignore-case;
-      sed \
-         --quiet \
-         --expression='/__PACKAGE_LIST_END__/,/__PLUGIN_LIST_BEGIN__/{p;}' \
-         "$project/README.md";
-      list-plugins | sort --ignore-case;
-      sed \
-         --quiet \
-         --expression='/PLUGIN_LIST_END/,$p' \
-         "$project/README.md";
-   ) > "$tmp"
-
-   mv --force "$tmp" "$project/README.md"
-}
-
 main() {
    install-packages
    install-repo
    install-plugins
-   update-readme # for development
    show-tips
 }
 
-main
+[[ $0 != $BASH_SOURCE ]] || main # sourced or run
