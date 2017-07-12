@@ -23,11 +23,14 @@ nore . :
 
 set background=dark
 set colorcolumn=+1 " textwidth+1
+set expandtab
 set foldmethod=syntax
 set foldlevel=20 " large enough
 set hlsearch
 set number
 set relativenumber
+set shiftwidth=3
+set tabstop=3
 set textwidth=80
 
 " }}}
