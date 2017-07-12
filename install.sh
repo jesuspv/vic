@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-# specific configuration
-
-if [[ $0 = $BASH_SOURCE ]]; then # not sourced
-   [[ $# -eq 1 ]] || { echo "error: missing configuration environment (X in ~/.vims/X)" >&2; exit 1; }
-   readonly CFG_ENV=$1
-   shift
-fi
-
 # generic configuration
 
 if [[ $0 = $BASH_SOURCE ]]; then # not sourced
@@ -19,15 +11,26 @@ fi
 # TODO(jesuspv) exuberant-ctags could be not required
 declare -A PACKAGES=(\
    [ack-grep]=https://beyondgrep.com/ \
+   [cmake]=https://cmake.org \
    [curl]=https://curl.haxx.se/ \
    [exuberant-ctags]=http://ctags.sourceforge.net/ \
    [fonts-fantasque-sans]=https://github.com/belluzj/fantasque-sans \
    [git]=https://git-scm.com/ \
+   [python-dev]=https://www.python.org/ \
+   [python3-dev]=https://www.python.org/ \
    [ranger]=http://ranger.nongnu.org/ \
    [sshfs]=https://github.com/libfuse/sshfs \
    [tree]=https://linux.die.net/man/1/tree \
    [vim]=http://www.vim.org/ \
    )
+
+# specific configuration
+
+if [[ $0 = $BASH_SOURCE ]]; then # not sourced
+   [[ $# -eq 1 ]] || { echo "error: missing configuration environment (X in ~/.vims/X)" >&2; exit 1; }
+   readonly CFG_ENV=$1
+   shift
+fi
 
 # logic
 
