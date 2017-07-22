@@ -11,11 +11,9 @@ available in your environment.
 
 ## Installation
 
-Installation requires `apt-get` command available to install the system-package
-dependencies (see list below). Otherwise, run the one-liners below without the
-parameter `+system`.
-
-Run one of these one-liners:
+Installation requires `apt-get` command is available to install the
+system-package dependencies (see list below). Run one of the next one-liners if
+available:
 
 ```bash
 # with curl
@@ -23,6 +21,9 @@ bash <(curl --location https://raw.githubusercontent.com/jesuspv/vic/master/inst
 # with wget
 bash <(wget --output-document=- https://raw.githubusercontent.com/jesuspv/vic/master/install.sh) c +system
 ```
+
+Otherwise, install dependencies manually, running then the one-liner but without
+the parameter `+system`.
 
 Please, do not forget the ending argument `c`. It is the *configuration
 environment*, that is, the `c` in `~/.vims/c/` and `~/.vims/vic`. It allows to
@@ -37,8 +38,8 @@ merge`.
 ## Uninstall
 
 Run `rm -rf ~/.vims/c ~/.vims/vic`. Additionally, review the system package list
-for packages not longer needed. Remove them with `apt-get remove
---auto-remove`.
+for packages not longer needed. If `apt-get` is available, remove them with
+`apt-get remove --auto-remove`.
 
 ## List of System Packages
 
