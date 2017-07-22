@@ -29,4 +29,4 @@ git() {
 export -f git # mock it!
 
 readonly CFG_ENV=$(head --lines=1 "$DEPLOY_SOURCE/README.md" | sed 's|# vi||')
-"$DEPLOY_SOURCE/install.sh" "$CFG_ENV"
+"$DEPLOY_SOURCE/install.sh" "$CFG_ENV" +system

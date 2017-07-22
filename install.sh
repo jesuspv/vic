@@ -27,14 +27,23 @@ declare -A PACKAGES=(\
 # specific configuration
 
 if [[ $0 = $BASH_SOURCE ]]; then # not sourced
-   [[ $# -eq 1 ]] || { echo "error: missing configuration environment (X in ~/.vims/X)" >&2; exit 1; }
+   if [[ $# -eq 1 ]]; then
+      echo "error: missing configuration environment (X in ~/.vims/X)" >&2
+      exit 1
+   fi
    readonly CFG_ENV=$1
    shift
+
+   if [[ ${1:-} = system ]]; then
+      readonly FLAG_SYSTEM=0 # any value actually, 0 is Bash's `true`
+   fi
 fi
 
 # logic
 
 install-packages() {
+   [[ -v FLAG_SYSTEM ]] || return 0
+
    echo "Installing system packages..."
 
    sudo apt-get install --yes "${!PACKAGES[@]}"
@@ -68,7 +77,7 @@ install-repo() {
    fi
 
    if [[ ! -x ~/.vims/vi$CFG_ENV ]]; then
-      echo -e "#!/usr/bin/env bash\n~/.vims/$CFG_ENV/vi" "\"$CFG_ENV\"" '"$@"' > ~/.vims/vi"$CFG_ENV" 
+      echo -e "#!/usr/bin/env bash\n~/.vims/$CFG_ENV/vi" "\"$CFG_ENV\"" '"$@"' > ~/.vims/vi"$CFG_ENV"
       chmod a+x ~/.vims/vi"$CFG_ENV"
    fi
 }

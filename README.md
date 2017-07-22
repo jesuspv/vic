@@ -11,13 +11,17 @@ available in your environment.
 
 ## Installation
 
-Use one of these one-liners:
+Installation requires `apt-get` command available to install the system-package
+dependencies (see list below). Otherwise, run the one-liners below without the
+parameter `+system`.
+
+Run one of these one-liners:
 
 ```bash
 # with curl
-bash <(curl --location https://raw.githubusercontent.com/jesuspv/vic/master/install.sh) c
+bash <(curl --location https://raw.githubusercontent.com/jesuspv/vic/master/install.sh) c +system
 # with wget
-bash <(wget --output-document=- https://raw.githubusercontent.com/jesuspv/vic/master/install.sh) c
+bash <(wget --output-document=- https://raw.githubusercontent.com/jesuspv/vic/master/install.sh) c +system
 ```
 
 Please, do not forget the ending argument `c`. It is the *configuration
@@ -30,18 +34,28 @@ Just run again the installation process to let the script proceed with
 the configuration upgrade. Changes on `vimrc` file are merged by using `git
 merge`.
 
+## Uninstall
+
+Run `rm -rf ~/.vims/c ~/.vims/vic`. Additionally, review the system package list
+for packages not longer needed. Remove them with `apt-get remove
+--auto-remove`.
+
 ## List of System Packages
 
 Please, notice that their installation requires `sudo` rights (password will be
 requested).
 
 [](__PACKAGE_LIST_BEGIN__)
-* [ack-grep](https://beyondgrep.com/)
+* [cmake](https://cmake.org)
 * [curl](https://curl.haxx.se/)
 * [exuberant-ctags](http://ctags.sourceforge.net/)
 * [fonts-fantasque-sans](https://github.com/belluzj/fantasque-sans)
 * [git](https://git-scm.com/)
+* [python3-dev](https://www.python.org/)
+* [python-dev](https://www.python.org/)
 * [ranger](http://ranger.nongnu.org/)
+* [rdiff-backup](http://www.nongnu.org/rdiff-backup/)
+* [silversearcher-ag](https://github.com/ggreer/the_silver_searcher)
 * [sshfs](https://github.com/libfuse/sshfs)
 * [tree](https://linux.die.net/man/1/tree)
 * [vim](http://www.vim.org/)
@@ -53,28 +67,37 @@ handled by [`apt-get`](https://linux.die.net/man/8/apt-get).
 ## List of Plugins
 
 [](__PLUGIN_LIST_BEGIN__)
-* [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 * [easymotion/vim-easymotion](https://github.com/easymotion/vim-easymotion)
+* [embear/vim-localvimrc](https://github.com/embear/vim-localvimrc)
 * [francoiscabrol/ranger.vim](https://github.com/francoiscabrol/ranger.vim)
 * [godlygeek/tabular](https://github.com/godlygeek/tabular)
+* [gorkunov/smartgf.vim](https://github.com/gorkunov/smartgf.vim)
+* [itchyny/lightline.vim](https://github.com/itchyny/lightline.vim)
+* [junegunn/goyo.vim](https://github.com/junegunn/goyo.vim)
 * [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align)
 * [justinmk/vim-sneak](https://github.com/justinmk/vim-sneak)
 * [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
 * [kshenoy/vim-signature](https://github.com/kshenoy/vim-signature)
-* [majutsushi/tagbar](https://github.com/majutsushi/tagbar)
 * [mhinz/vim-startify](https://github.com/mhinz/vim-startify)
 * [mileszs/ack.vim](https://github.com/mileszs/ack.vim)
 * [morhetz/gruvbox](https://github.com/morhetz/gruvbox)
-* [nathanaelkane/vim-indent-guides](https://github.com/nathanaelkane/vim-indent-guides)
+* [ntpeters/vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)
 * [octol/vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
+Plug 'airblade/vim-gitgutter' " slow over sshfs
+Plug 'majutsushi/tagbar' " slow over sshfs
+Plug 'tpope/vim-fugitive' " slow over sshfs
+Plug 'tpope/vim-projectionist' " slow over sshfs
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+* [qpkorr/vim-bufkill](https://github.com/qpkorr/vim-bufkill)
+* [Shougo/unite.vim](https://github.com/Shougo/unite.vim)
+* [terryma/vim-expand-region](https://github.com/terryma/vim-expand-region)
 * [terryma/vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
+* [timofurrer/vim-bufferline](https://github.com/timofurrer/vim-bufferline)
 * [Townk/vim-autoclose](https://github.com/Townk/vim-autoclose)
 * [tpope/vim-dispatch](https://github.com/tpope/vim-dispatch)
-* [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
-* [tpope/vim-projectionist](https://github.com/tpope/vim-projectionist)
 * [tpope/vim-sensible](https://github.com/tpope/vim-sensible)
 * [tpope/vim-vinegar](https://github.com/tpope/vim-vinegar)
-* [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
+* [Yggdroot/indentLine](https://github.com/Yggdroot/indentLine)
 [](__PLUGIN_LIST_END__)
 
 This list is defined in `vim/plugin/settings/plug.vim`. Plugins are handled by
