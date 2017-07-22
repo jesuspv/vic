@@ -18,24 +18,26 @@ imap jj <Esc>
 
 let mapleader = ","
 
-" save your muscles by just typing '.' instead of ':' (for commands)
-nore . :
-
+set autoindent " turns it on
 set background=dark
+set cindent " stricter rules for C programs
 set colorcolumn=+1 " textwidth+1
-set expandtab
+set expandtab " don't use actual tab character (ctr-v)
 set foldmethod=syntax
 set foldlevel=20 " large enough
 set hlsearch
 set number
+set nowrapscan " incremental search stops at the end of file
 set relativenumber
-set shiftwidth=3
-set tabstop=3
+set shiftwidth=3 " indenting is 3 spaces
+set smartindent " does the right thing (mostly) in programs
+set tabstop=3 " tabs are at proper location
 set textwidth=80
+set whichwrap+=<,>,h,l,[,] " wrap left and right
 
 " }}}
 
-" General reference settings {{{
+" General referenced settings {{{
 
 " From http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
 " This allows buffers to be hidden if you've modified a buffer.
