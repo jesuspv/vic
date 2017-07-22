@@ -17,7 +17,8 @@ git() {
 
    case ${1:-} in
    clone|pull)
-      rsync --archive --recursive --verbose "$DEPLOY_SOURCE/" "$deploy_target"
+      # not rsync semantics (see https://unix.stackexchange.com/questions/76739/rsync-delete-files-on-receiving-side-that-were-deleted-on-sending-side-but-do)
+      rdiff-backup "$DEPLOY_SOURCE/" "$deploy_target"
       ;;
    *)
       echo "error: call '$*' not mocked" >&2

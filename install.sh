@@ -8,9 +8,7 @@ if [[ $0 = $BASH_SOURCE ]]; then # not sourced
    set -o pipefail
 fi
 
-# TODO(jesuspv) exuberant-ctags could be not required
 declare -A PACKAGES=(\
-   [ack-grep]=https://beyondgrep.com/ \
    [cmake]=https://cmake.org \
    [curl]=https://curl.haxx.se/ \
    [exuberant-ctags]=http://ctags.sourceforge.net/ \
@@ -19,7 +17,9 @@ declare -A PACKAGES=(\
    [python-dev]=https://www.python.org/ \
    [python3-dev]=https://www.python.org/ \
    [ranger]=http://ranger.nongnu.org/ \
+   [rdiff-backup]=http://www.nongnu.org/rdiff-backup/ \
    [sshfs]=https://github.com/libfuse/sshfs \
+   [silversearcher-ag]=https://github.com/ggreer/the_silver_searcher \
    [tree]=https://linux.die.net/man/1/tree \
    [vim]=http://www.vim.org/ \
    )
