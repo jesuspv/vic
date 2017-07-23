@@ -68,6 +68,7 @@ handled by [`apt-get`](https://linux.die.net/man/8/apt-get).
 ## List of Plugins
 
 [](__PLUGIN_LIST_BEGIN__)
+* [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 * [easymotion/vim-easymotion](https://github.com/easymotion/vim-easymotion)
 * [embear/vim-localvimrc](https://github.com/embear/vim-localvimrc)
 * [francoiscabrol/ranger.vim](https://github.com/francoiscabrol/ranger.vim)
@@ -79,16 +80,12 @@ handled by [`apt-get`](https://linux.die.net/man/8/apt-get).
 * [justinmk/vim-sneak](https://github.com/justinmk/vim-sneak)
 * [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
 * [kshenoy/vim-signature](https://github.com/kshenoy/vim-signature)
+* [majutsushi/tagbar](https://github.com/majutsushi/tagbar)
 * [mhinz/vim-startify](https://github.com/mhinz/vim-startify)
 * [mileszs/ack.vim](https://github.com/mileszs/ack.vim)
 * [morhetz/gruvbox](https://github.com/morhetz/gruvbox)
 * [ntpeters/vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)
 * [octol/vim-cpp-enhanced-highlight](https://github.com/octol/vim-cpp-enhanced-highlight)
-Plug 'airblade/vim-gitgutter' " slow over sshfs
-Plug 'majutsushi/tagbar' " slow over sshfs
-Plug 'tpope/vim-fugitive' " slow over sshfs
-Plug 'tpope/vim-projectionist' " slow over sshfs
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 * [qpkorr/vim-bufkill](https://github.com/qpkorr/vim-bufkill)
 * [Shougo/unite.vim](https://github.com/Shougo/unite.vim)
 * [terryma/vim-expand-region](https://github.com/terryma/vim-expand-region)
@@ -96,8 +93,11 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 * [timofurrer/vim-bufferline](https://github.com/timofurrer/vim-bufferline)
 * [Townk/vim-autoclose](https://github.com/Townk/vim-autoclose)
 * [tpope/vim-dispatch](https://github.com/tpope/vim-dispatch)
+* [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
+* [tpope/vim-projectionist](https://github.com/tpope/vim-projectionist)
 * [tpope/vim-sensible](https://github.com/tpope/vim-sensible)
 * [tpope/vim-vinegar](https://github.com/tpope/vim-vinegar)
+* [Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 * [Yggdroot/indentLine](https://github.com/Yggdroot/indentLine)
 [](__PLUGIN_LIST_END__)
 

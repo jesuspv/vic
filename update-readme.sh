@@ -11,7 +11,7 @@ list-packages() {
 list-plugins() {
    local -r project=$(cd "${BASH_SOURCE[0]%/*}" && pwd)
 
-   grep '^Plug' "$project/vim/plugin/settings/plug.vim" | sed "s|^Plug '\(.*\)'$|* [\1](https://github.com/\1)|"
+   grep '^Plug' "$project/vim/plugin/settings/plug.vim" | sed "s|^Plug '\([^']*\)'.*$|* [\1](https://github.com/\1)|"
 }
 
 main() {
