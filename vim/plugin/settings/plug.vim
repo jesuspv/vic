@@ -1,5 +1,6 @@
 call plug#begin()
 Plug 'airblade/vim-gitgutter' " slow over sshfs
+Plug 'ap/vim-buftabline'
 Plug 'easymotion/vim-easymotion'
 Plug 'embear/vim-localvimrc'
 Plug 'francoiscabrol/ranger.vim'
@@ -21,7 +22,6 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'Shougo/unite.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'timofurrer/vim-bufferline'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive' " slow over sshfs

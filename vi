@@ -18,7 +18,7 @@ readonly VIMRC=$HOME/.vims/$CFG_ENV/vimrc
 
 # main
 
-vim -p -N -n \
+command -p vim -N -n \
    -i "$VIMINFO" \
    -u "$VIMRC" \
    --cmd 'let &rtp = substitute(&rtp, $HOME."/\.vim", "'$VIMDIR'", "g")' \

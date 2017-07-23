@@ -69,6 +69,7 @@ handled by [`apt-get`](https://linux.die.net/man/8/apt-get).
 
 [](__PLUGIN_LIST_BEGIN__)
 * [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* [ap/vim-buftabline](https://github.com/ap/vim-buftabline)
 * [easymotion/vim-easymotion](https://github.com/easymotion/vim-easymotion)
 * [embear/vim-localvimrc](https://github.com/embear/vim-localvimrc)
 * [francoiscabrol/ranger.vim](https://github.com/francoiscabrol/ranger.vim)
@@ -90,7 +91,6 @@ handled by [`apt-get`](https://linux.die.net/man/8/apt-get).
 * [Shougo/unite.vim](https://github.com/Shougo/unite.vim)
 * [terryma/vim-expand-region](https://github.com/terryma/vim-expand-region)
 * [terryma/vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
-* [timofurrer/vim-bufferline](https://github.com/timofurrer/vim-bufferline)
 * [Townk/vim-autoclose](https://github.com/Townk/vim-autoclose)
 * [tpope/vim-dispatch](https://github.com/tpope/vim-dispatch)
 * [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
