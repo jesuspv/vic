@@ -48,4 +48,8 @@ set hidden
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
+" From http://nvie.com/posts/how-i-boosted-my-vim/
+nmap <silent> <leader>/ :nohlsearch<CR>
+cmap w!! w !sudo tee % >/dev/null
+
 " }}}
