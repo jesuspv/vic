@@ -28,6 +28,7 @@ set foldlevel=20 " large enough
 set hlsearch
 set number
 set nowrapscan " incremental search stops at the end of file
+set path+=** " find files recursively
 set relativenumber
 set shiftwidth=3 " indenting is 3 spaces
 set smartindent " does the right thing (mostly) in programs

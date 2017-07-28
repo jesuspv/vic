@@ -1,16 +1,17 @@
 call plug#begin()
 Plug 'airblade/vim-gitgutter' " slow over sshfs
 Plug 'ap/vim-buftabline'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'embear/vim-localvimrc'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'godlygeek/tabular'
 Plug 'gorkunov/smartgf.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-sneak'
-Plug 'kien/ctrlp.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'majutsushi/tagbar' " slow over sshfs
 Plug 'mhinz/vim-startify'
@@ -22,7 +23,6 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'Shougo/unite.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive' " slow over sshfs
 Plug 'tpope/vim-projectionist' " slow over sshfs

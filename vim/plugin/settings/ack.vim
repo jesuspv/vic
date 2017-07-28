@@ -1,1 +1,2 @@
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ack_use_dispatch = 1
+let g:ackprg = 'ag --vimgrep'
