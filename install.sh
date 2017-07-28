@@ -2,7 +2,10 @@
 
 # generic configuration
 
-if [[ $0 = $BASH_SOURCE ]]; then # not sourced
+standalone() { [[ ! -v BASH_SOURCE ]] || [[ $0 = $BASH_SOURCE ]]; }
+sourced()    { ! standalone; }
+
+if standalone; then
    set -o errexit
    set -o nounset
    set -o pipefail
@@ -26,7 +29,7 @@ declare -A PACKAGES=(\
 
 # specific configuration
 
-if [[ $0 = $BASH_SOURCE ]]; then # not sourced
+if standalone; then
    if [[ $# -eq 1 ]]; then
       echo "error: missing configuration environment (X in ~/.vims/X)" >&2
       exit 1
@@ -97,4 +100,4 @@ main() {
    show-tips
 }
 
-[[ $0 != $BASH_SOURCE ]] || main # sourced or run
+sourced || main
