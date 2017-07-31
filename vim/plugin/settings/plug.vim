@@ -8,6 +8,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'embear/vim-localvimrc'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'godlygeek/tabular'
+Plug 'hari-rangarajan/CCTree'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
@@ -29,5 +30,6 @@ Plug 'tpope/vim-fugitive' " slow over sshfs
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'vim-scripts/cscope.vim'
 Plug 'Yggdroot/indentLine'
 call plug#end()

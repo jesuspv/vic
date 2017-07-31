@@ -13,6 +13,7 @@ fi
 
 declare -A PACKAGES=(\
    [cmake]=https://cmake.org \
+   [csope]=http://cscope.sourceforge.net/ \
    [curl]=https://curl.haxx.se/ \
    [exuberant-ctags]=http://ctags.sourceforge.net/ \
    [fonts-fantasque-sans]=https://github.com/belluzj/fantasque-sans \
