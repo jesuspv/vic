@@ -6,12 +6,6 @@ endfor
 
 " }}}
 
-" General custom settings for plugins {{{
-
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-
-" }}}
-
 " General custom settings {{{
 
 try
@@ -59,5 +53,11 @@ au BufWinEnter * silent! loadview
 " From http://nvie.com/posts/how-i-boosted-my-vim/
 nmap <silent> <leader>/ :nohlsearch<CR>
 cmap w!! w !sudo tee % >/dev/null
+
+" }}}
+
+" General custom settings for plugins {{{
+
+nnoremap <leader>gt :YcmCompleter GoTo<CR>
 
 " }}}
