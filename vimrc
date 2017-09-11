@@ -6,7 +6,13 @@ endfor
 
 " }}}
 
-" General personal settings {{{
+" General custom settings for plugins {{{
+
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+" }}}
+
+" General custom settings {{{
 
 try
    colorscheme gruvbox
@@ -30,6 +36,7 @@ set number
 set nowrapscan " incremental search stops at the end of file
 set path+=** " find files recursively
 set relativenumber
+set shell=bash\ --login
 set shiftwidth=3 " indenting is 3 spaces
 set smartindent " does the right thing (mostly) in programs
 set tabstop=3 " tabs are at proper location
