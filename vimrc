@@ -40,7 +40,7 @@ set whichwrap+=<,>,h,l,[,] " wrap left and right
 set expandtab
 set shiftwidth=3
 set smarttab
-set softtabstop=0
+set softtabstop=3
 set tabstop=3
 
 " }}}
