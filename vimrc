@@ -22,7 +22,6 @@ set autoindent " turns it on
 set background=dark
 set cindent " stricter rules for C programs
 set colorcolumn=+1 " textwidth+1
-set expandtab " don't use actual tab character (ctr-v)
 set foldmethod=syntax
 set foldlevel=20 " large enough
 set hlsearch
@@ -31,11 +30,20 @@ set nowrapscan " incremental search stops at the end of file
 set path+=** " find files recursively
 set relativenumber
 set shell=bash\ --login
-set shiftwidth=3 " indenting is 3 spaces
 set smartindent " does the right thing (mostly) in programs
-set tabstop=3 " tabs are at proper location
 set textwidth=80
 set whichwrap+=<,>,h,l,[,] " wrap left and right
+
+" tabs {{{
+
+" See https://stackoverflow.com/a/1878983
+set expandtab
+set shiftwidth=3
+set smarttab
+set softtabstop=0
+set tabstop=3
+
+" }}}
 
 " }}}
 
