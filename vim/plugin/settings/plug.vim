@@ -34,4 +34,5 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'vim-scripts/cscope.vim'
+Plug 'vim-syntastic/syntastic'
 call plug#end()

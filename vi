@@ -12,13 +12,23 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+readonly SCRIPT=$(readlink -f "${BASH_SOURCE[0]}")
+readonly VIMBIN=$( whereis -b vim \
+                 | tr ' ' '\n' \
+                 | tail --lines=+2 \
+                 | grep -v "$SCRIPT" \
+                 | head --lines=1 \
+                 )
+
 readonly VIMDIR=$HOME/.vims/$CFG_ENV/vim
 readonly VIMINFO=$HOME/.vims/$CFG_ENV/.viminfo
 readonly VIMRC=$HOME/.vims/$CFG_ENV/vimrc
 
 # main
 
-command -p vim -N -n \
+# invoking "$VIMBIN" is like 'command -p'
+# but preserving environment (e.g., PATH) 
+"$VIMBIN" -N -n \
    -i "$VIMINFO" \
    -u "$VIMRC" \
    --cmd 'let &rtp = substitute(&rtp, $HOME."/\.vim", "'$VIMDIR'", "g")' \
