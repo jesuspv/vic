@@ -22,6 +22,7 @@ declare -A PACKAGES=(\
    [python3-dev]=https://www.python.org/ \
    [ranger]=http://ranger.nongnu.org/ \
    [rdiff-backup]=http://www.nongnu.org/rdiff-backup/ \
+   [shellcheck]=https://www.shellcheck.net/ \
    [sshfs]=https://github.com/libfuse/sshfs \
    [silversearcher-ag]=https://github.com/ggreer/the_silver_searcher \
    [tree]=https://linux.die.net/man/1/tree \
